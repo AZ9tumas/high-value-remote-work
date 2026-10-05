@@ -6,11 +6,14 @@ so concurrent writers never hit merge conflicts. Protocol: board/README.md.
 Python 3.8+, standard library only. Run with --help for commands.
 """
 import argparse
+import contextlib
 import datetime as dt
+import itertools
 import json
 import pathlib
 import re
 import sys
+import time
 
 ROOT = pathlib.Path(__file__).resolve().parent
 MSG_DIR = ROOT / "messages"
@@ -55,6 +58,8 @@ def parse(path):
                             value = json.loads(value)
                         except ValueError:
                             pass
+                    else:
+                        value = re.sub(r"\s+#.*$", "", value)  # YAML inline comment
                     meta[key.strip()] = value
             body = text[end + 4:].lstrip("\n")
     return meta, body
@@ -98,17 +103,48 @@ def title_of(meta, body):
     return first.lstrip("# ").strip()
 
 
+@contextlib.contextmanager
+def task_lock(timeout=10.0, stale_after=60.0):
+    """Serialize task writers in one checkout. mkdir is atomic; a crashed writer's lock expires."""
+    lock = TASK_DIR / ".lock"
+    deadline = time.monotonic() + timeout
+    while True:
+        try:
+            lock.mkdir()
+            break
+        except FileExistsError:
+            with contextlib.suppress(FileNotFoundError):
+                if time.time() - lock.stat().st_mtime > stale_after:
+                    lock.rmdir()
+                    continue
+            if time.monotonic() > deadline:
+                sys.exit(f"Tasks are locked by another writer ({lock}); retry shortly")
+            time.sleep(0.05)
+    try:
+        yield
+    finally:
+        lock.rmdir()
+
+
 def cmd_post(args):
     MSG_DIR.mkdir(parents=True, exist_ok=True)
+    reply_to = find_one(messages(), args.re).stem if args.re else None
+    body = read_body(args)
     stamp = now_utc().strftime("%Y-%m-%dT%H%MZ")
     stem = f"{stamp}_{args.sender}_{slugify(args.title)}"
-    path, n = MSG_DIR / f"{stem}.md", 2
-    while path.exists():
-        path, n = MSG_DIR / f"{stem}-{n}.md", n + 1
-    meta = {"id": path.stem, "from": args.sender, "to": args.to, "topic": args.topic}
-    if args.re:
-        meta["re"] = find_one(messages(), args.re).stem
-    path.write_text(render(meta, f"# {args.title}\n\n{read_body(args)}"), encoding="utf-8")
+    for n in itertools.count(1):
+        suffix = "" if n == 1 else f"-{n}"
+        path = MSG_DIR / f"{stem}{suffix}.md"
+        try:
+            handle = open(path, "x", encoding="utf-8")  # exclusive: never overwrite a message
+        except FileExistsError:
+            continue
+        meta = {"id": path.stem, "from": args.sender, "to": args.to, "topic": args.topic}
+        if reply_to:
+            meta["re"] = reply_to
+        with handle:
+            handle.write(render(meta, f"# {args.title}\n\n{body}"))
+        break
     print(path.relative_to(ROOT.parent))
 
 
@@ -152,29 +188,38 @@ def next_task_id(prefix):
 def cmd_task_new(args):
     TASK_DIR.mkdir(parents=True, exist_ok=True)
     prefix = (args.prefix or args.sender[0]).upper()
-    task_id = next_task_id(prefix)
+    text = read_body(args).strip()
     today = now_utc().date().isoformat()
-    meta = {"id": task_id, "title": args.title, "status": "open", "owner": "none",
-            "created_by": args.sender, "created": today, "updated": today}
-    body = (f"# {task_id} · {args.title}\n\n{read_body(args).strip()}\n\n"
-            f"## Log\n- {today} {args.sender}: created\n")
-    path = TASK_DIR / f"{task_id}-{slugify(args.title)}.md"
-    path.write_text(render(meta, body), encoding="utf-8")
+    with task_lock():
+        task_id = next_task_id(prefix)
+        meta = {"id": task_id, "title": args.title, "status": "open", "owner": "none",
+                "created_by": args.sender, "created": today, "updated": today}
+        body = f"# {task_id} · {args.title}\n\n{text}\n\n## Log\n- {today} {args.sender}: created\n"
+        path = TASK_DIR / f"{task_id}-{slugify(args.title)}.md"
+        with open(path, "x", encoding="utf-8") as handle:
+            handle.write(render(meta, body))
     print(path.relative_to(ROOT.parent))
 
 
 def update_task(args, status, owner=None):
-    path = find_one(tasks(), args.id)
-    meta, body = parse(path)
-    if status == "claimed" and meta.get("owner") not in ("none", "", args.by) and not args.force:
-        sys.exit(f"{meta['id']} is already owned by {meta['owner']} (use --force to take over)")
-    today = now_utc().date().isoformat()
-    meta["status"], meta["updated"] = status, today
-    if owner:
-        meta["owner"] = owner
-    note = f": {args.note}" if getattr(args, "note", None) else ""
-    body = body.rstrip() + f"\n- {today} {args.by}: {status}{note}\n"
-    path.write_text(render(meta, body), encoding="utf-8")
+    with task_lock():
+        path = find_one(tasks(), args.id)
+        meta, body = parse(path)
+        current, holder = meta.get("status", "open"), meta.get("owner", "none")
+        if not args.force:
+            if status == "claimed" and current in ("done", "dropped"):
+                sys.exit(f"{meta['id']} is {current}; reopen it before claiming (or use --force)")
+            if current == "claimed" and holder not in ("none", "", args.by):
+                sys.exit(f"{meta['id']} is claimed by {holder} (use --force to override)")
+        today = now_utc().date().isoformat()
+        meta["status"], meta["updated"] = status, today
+        if owner:
+            meta["owner"] = owner
+        elif status == "done" and holder in ("none", ""):
+            meta["owner"] = args.by
+        note = f": {args.note}" if getattr(args, "note", None) else ""
+        body = body.rstrip() + f"\n- {today} {args.by}: {status}{note}\n"
+        path.write_text(render(meta, body), encoding="utf-8")
     print(f"{meta['id']} -> {status}" + (f" ({owner})" if owner else ""))
 
 

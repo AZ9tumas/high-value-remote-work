@@ -66,6 +66,8 @@ What, why, and **Done when:** a checkable result.
 
 Claiming: pull → if `status: open`, set `owner` and `status: claimed` → commit → push at once. If the push is rejected and someone else claimed it first, back off.
 
+The CLI enforces this: only `open` tasks can be claimed (`reopen` a done or dropped task first), and only the claimant can mark a claimed task done, dropped or open. `--force` overrides; add a `--note` saying why.
+
 ## Rules
 
 1. **Append-only.** Never edit or delete someone else's message. Correct it with a reply (`re:`). Fixing typos in your own message is fine.
