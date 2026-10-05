@@ -1,6 +1,6 @@
 # Portfolio spec: one offer, one case study
 
-C-006 · claude · 5 Oct 2026. Draft for the owner's review. Nothing has been posted, sent or published. The for-hire kit in [`outreach/`](outreach/) builds on it.
+C-006 · claude · 5 Oct 2026. Draft for owner review; nothing has been posted or sent. The for-hire kit in [`outreach/`](outreach/) builds on it.
 
 **Evidence caveat.** Every fact about the owner's work comes from the game repo's README, copied to [`games/stygian-drop/source/README.md`](../games/stygian-drop/source/README.md). That repo is not in this checkout, so nothing here proves the code exists or works, and the README mixes eras (sprint is both installed and not installed). Such claims are marked **owner to confirm** and stay out of public text until confirmed and showable.
 
@@ -8,11 +8,11 @@ C-006 · claude · 5 Oct 2026. Draft for the owner's review. Nothing has been po
 
 ### Recommended: one moving system, replicated once
 
-Codex's default is a save, duplication or server-validation fix, but [the brief](codex_income_execution.md) says to use a specialty with stronger evidence. The owner's strongest evidence is a before/after claim backed by an analysis: a scissor-gate sweep costs "one attribute batch plus a bounded collider update, not 289 weld poses per Heartbeat" (README; owner to confirm). A buyer can check that kind of result. Optimization and debugging also appear in experienced scripters' offers and in Twin Atlas's engineer post ([freelance note §3](../research_notes/Roblox%20scripter%20income%20strategies/freelance_commission_market.md), [studio note §3](../research_notes/Roblox%20scripter%20income%20strategies/studio_jobs_contracts.md); search summaries).
+Codex's default is a save, duplication or validation fix, but [the brief](codex_income_execution.md) prefers a specialty with stronger evidence. The owner's strongest evidence is a before/after claim backed by an analysis: a scissor-gate sweep costs "one attribute batch plus a bounded collider update, not 289 weld poses per Heartbeat" (README; owner to confirm). A buyer can check that kind of result. Studios and experienced scripters also list optimization and debugging ([freelance note §3](../research_notes/Roblox%20scripter%20income%20strategies/freelance_commission_market.md), [studio note §3](../research_notes/Roblox%20scripter%20income%20strategies/studio_jobs_contracts.md); search summaries).
 
 | Field | Spec |
 |---|---|
-| Problem | A door, gate, lift, platform or rig is moved on the server every frame. It costs bandwidth and server time and stutters on clients |
+| Problem | A door, gate, lift, platform or rig moves on the server every frame, costing bandwidth and server time, and stutters on clients |
 | Outcome | The server keeps authority over state and collision but replicates each move once (attributes plus a server-clock start time). Clients animate locally; late joiners rebuild the pose |
 | Environment | The client's current engine and framework; PC plus one phone; StreamingEnabled as the place uses it |
 | Acceptance check | One written scenario (players, cycles, device), run before and after. (1) Network and server-time cost (for example `Stats.DataSendKbps`, `Stats.HeartbeatTimeMs`) meets the targets set in discovery. (2) Parity checklist: timing within tolerance, collisions match, a late joiner sees the live pose, no new remote trusts the client |
@@ -27,13 +27,13 @@ Codex's default is a save, duplication or server-validation fix, but [the brief]
 
 **Price, a hypothesis to test:** discovery $150; fix $600, 50% deposit. Basis: [`PLAN.md`](../PLAN.md) uses $500 to $1,500 per scoped system, from vendor hiring guides (Memvers, Game-Ace) that are unverified search summaries; a freelance Luau listing pays $40 to $60/h (Sawhorse, date unverified) ([freelance note §2](../research_notes/Roblox%20scripter%20income%20strategies/freelance_commission_market.md), [studio note §2](../research_notes/Roblox%20scripter%20income%20strategies/studio_jobs_contracts.md)). $600 over 6 to 12 h is $50 to $100/h before selling time.
 
-**Demand risk:** buyers ask for data and combat work more often than optimization (freelance note §3). If approved contacts reply but nothing gets scoped, ask why; switching to A1 is the one change to consider.
+**Demand risk:** buyers ask for data and combat work more often than optimization (freelance note §3). If replies come but nothing gets scoped, ask why; A1 is the one change to consider.
 
 ### Alternates
 
 | | A1: one save, duplication or validation bug (Codex's default) | A2: handling pass for one vehicle |
 |---|---|---|
-| Choose if | The owner has fixed such bugs and can show or describe one | The cars look good on video and the owner wants the driving niche |
+| Choose if | The owner has fixed such bugs and can show one | The cars look good on video |
 | Evidence (owner to confirm) | Session-locked ProfileStore, Mock store, gameplay gated on load | 19 cars on body movers: per-wheel grip, load transfer, Ackermann steering |
 | Problem | One reproducible failure: lost or rolled-back data, duplicated items, or a remote that trusts the client | One car type flips, slides or jitters, or fails under latency |
 | Acceptance check | A written reproduction fails before and passes after; a regression check covers it; handover note | Agreed test-course numbers (top speed, braking distance, turning circle, no rollover at stated speeds) on PC and touch |
@@ -67,13 +67,13 @@ Environment, revisions, delivery, support and price sources as above.
 
 ### Pre-launch secrecy
 
-To keep Stygian Drop quiet, extract one module into a new public Rojo repo: a **"replicate once, animate on clients" gate kit** built from plain parts, with no game art, names or story. The hoist and its gate are already retired from the design ([v0.2 §2](../games/stygian-drop/source/STYGIAN_DROP.md)), so the kit reveals little. If the owner wrote the client module alone, it can double as the HiddenDevs script (section 5).
+To keep Stygian Drop quiet, extract one module into a public Rojo repo: a **"replicate once, animate on clients" gate kit** built from plain parts, with no game art, names or story. The hoist's look is already retired from the design ([v0.2 §2](../games/stygian-drop/source/STYGIAN_DROP.md)), so a plain-parts kit reveals little about the game. If the owner wrote the client module alone, it can double as the HiddenDevs script (section 5).
 
 ## 3. Fallback demo (only if nothing can be shown)
 
 One demo place: the gate kit, rebuilt from scratch, beside a naive server-posed gate. Set a time cap first (suggest 8 h). Pass checks:
 
-1. Three clients in a local server test: progress at the same server time differs by no more than an agreed tolerance.
+1. Three clients in a local server test: progress at the same server time agrees within tolerance.
 2. A client joining mid-sweep shows the live pose.
 3. No player passes the closed gate; the collider follows the sweep.
 4. Server `Stats.DataSendKbps` logged for both gates over the same 10 sweeps; published numbers come from that log.
@@ -96,7 +96,7 @@ gate-kit/
   demo/  .github/workflows/ci.yml  README.md  LICENSE
 ```
 
-- **Tests: Jest Roblox**, https://github.com/Roblox/jest-roblox. Roblox's official Jest port: release 3.20.1 on 30 Aug 2026, commits to 2 Oct 2026, on Wally as `roblox/jest`. Runs in Studio, or in CI through Open Cloud Luau Execution (OCALE). Avoid TestEZ (last commit 30 Jan 2023) and the jsdotlua/jest-lua fork (last release 23 Dec 2024). Checked with git, 5 Oct 2026.
+- **Tests: Jest Roblox**, https://github.com/Roblox/jest-roblox. Roblox's official Jest port: changelog version 3.20.1 (30 Aug 2026), commits to 2 Oct 2026, on Wally as `roblox/jest`. Runs in Studio, or in CI through Open Cloud Luau Execution (OCALE). Avoid TestEZ (last commit 30 Jan 2023) and the jsdotlua/jest-lua fork (last release 23 Dec 2024). Checked with git, 5 Oct 2026.
 - **CI (GitHub Actions):** job 1, every push: `CompeyDev/setup-rokit`, then `stylua --check`, `selene`, and `luau-lsp analyze` with a Rojo sourcemap. Job 2: Jest specs in a private test place through OCALE, key and IDs as repo secrets, like Roblox's [`ocale.yml`](https://github.com/Roblox/jest-roblox/blob/master/.github/workflows/ocale.yml). If job 2 is slow to set up, run Jest in Studio and ship job 1 first.
 - **README:** video link first, then purpose, install, a short usage example, how it works, before/after numbers with method and date, credits, license.
 
