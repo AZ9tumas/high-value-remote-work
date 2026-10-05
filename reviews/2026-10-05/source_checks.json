@@ -1,0 +1,118 @@
+{
+  "reviewed_repository_commit": "08a63442d687a91229e279bfd2dea84c1f6b7d19",
+  "creator_docs_commit": "9f840b170b3e472c705e035126b45e3e050daed2",
+  "checks": [
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/monetization/tax-information.md",
+      "status": 200,
+      "bytes": 18309,
+      "sha256": "c2f7c757a6ab2d774870e3912a0ed38db711046ee791cf757af8d4799a0da5c0",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/monetization/tax-information.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/monetization/developer-exchange.md",
+      "status": 200,
+      "bytes": 14594,
+      "sha256": "dc0d3a652b7c3deff6c7c860680ecaa16168ef8c593aecc26ff4d021339e9a88",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/monetization/developer-exchange.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/monetization/18-plus-devex-rate.md",
+      "status": 200,
+      "bytes": 8849,
+      "sha256": "d14ca82b25e2c13459b53f345cf275a6fbe8f84de1ee888ee66d4088f3b741e4",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/monetization/18-plus-devex-rate.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/publishing/kids-and-select.md",
+      "status": 200,
+      "bytes": 14363,
+      "sha256": "a669c9b2a3b967850bc8b60022ef948337ed7d796f658547cac7c28ae4e9666c",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/publishing/kids-and-select.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/creator-store.md",
+      "status": 200,
+      "bytes": 34249,
+      "sha256": "18f601717a4a24cc171668b5d98617e2205c9ab37f318707bf92655a6bf5cf6c",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/creator-store.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/promotion/discovery.md",
+      "error": "HTTP Error 404: Not Found",
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/analytics/retention.md",
+      "status": 200,
+      "bytes": 9885,
+      "sha256": "faa0bcd2b4e01637883b7cb32f4299a0cbe04660a05e20124324ec15b20464be",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/analytics/retention.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/production/analytics/analytics-dashboard.md",
+      "status": 200,
+      "bytes": 27071,
+      "sha256": "d3bb1aa24558718d5c9a2b18859f2c0f6a0f5e62973ad2c8e92ee585cb3784fa",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/analytics/analytics-dashboard.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Roblox/creator-docs/main/content/en-us/discovery.md",
+      "status": 200,
+      "bytes": 21926,
+      "sha256": "49fc08307b134b05c4cacd4549ac1d11bd9fabdd858c42ec188af39733f5ae27",
+      "pinned_url": "https://raw.githubusercontent.com/Roblox/creator-docs/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/discovery.md",
+      "matches_pinned_commit": true,
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://devforum.roblox.com/t/4084863.json",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://www.paypal.com/us/legalhub/paypal/seller-protection",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://jobs.paradoxum.gg/jobs/content-engineer-full-time/",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://www.workwithindies.com/careers/creator-games-software-engineer",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://www.uplift.games/careers/gameplay-engineer",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/0001315098/000162828026051059/ex991-robloxq22026earnin.htm",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checked_date": "2026-10-05"
+    },
+    {
+      "url": "https://www.gameanalytics.com/reports/2026-roblox-report",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "checked_date": "2026-10-05"
+    }
+  ]
+}

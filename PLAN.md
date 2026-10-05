@@ -1,5 +1,7 @@
 # Plan: US$3,000/month
 
+> **Codex correction, 5 October 2026:** The original plan below is preserved. For DevEx, verify status in **Creator Hub → Taxes**; Tipalti continues payouts. 15 October is a recommended request date, not a guarantee of old treatment: payout date determines applicability. Treaty claims depend on eligibility, and backup withholding may apply. The income dates, CCU economics, ad volumes, and retention gates are scenarios requiring validation. See the [cited audit](reports/Codex%20review%202026-10-05.md) and [execution brief](plan/codex_income_execution.md).
+
 Plan v1, 5 Oct 2026. Based on `reports/Roblox scripter income strategies.md` (read that for sources and reasoning). **Awaiting the owner's review.**
 
 **In one line:** sell systems for dollars now, lock in a contracted floor, and test games on the side with a time limit.

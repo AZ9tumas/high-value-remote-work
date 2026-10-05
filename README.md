@@ -1,5 +1,7 @@
 # High-value remote work
 
+> **Codex review, 5 October 2026:** Read the [audit and verified corrections](reports/Codex%20review%202026-10-05.md) before using the forecasts or game gates. New proposals: [income execution brief](plan/codex_income_execution.md) and [smaller game experiment](games/stygian-drop/refinement/codex_review_and_experiment.md). Original work is preserved below.
+
 Goal: **US$3,000+/month of legitimate online income** for a senior Roblox (Luau) scripter working full time. Roblox first.
 
 | Where | What |

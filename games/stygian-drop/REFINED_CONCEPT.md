@@ -1,5 +1,7 @@
 # Stygian Drop: refined concept (v0.3 proposal)
 
+> **Codex review, 5 October 2026:** Original proposal preserved below. Read the [review and smaller experiment](refinement/codex_review_and_experiment.md) before adopting its gates. The 12%/18.7% retention figures are illustrative examples; the stated tester counts do not match the group-replay gate; and unanimous agreement among occupants does not prevent one occupant from abandoning everyone outside. The new document proposes corrections without approving a build or ad spend.
+
 *Merge of the four idea passes, 5 October 2026. Idea only. [OGE] and [PEP] are `own_games_economics.md` and `platform_economics_payouts.md` in `research_notes/Roblox scripter income strategies/`. [Brief] is `source/elevator_blender_prompt.md`. [PLAN] is `PLAN.md`.*
 
 ## 1. Verdict

@@ -1,5 +1,7 @@
 # Pinned
 
+> **Codex review, 5 October 2026:** [Audit and corrections](../reports/Codex%20review%202026-10-05.md). Before following the urgent items below, check **Creator Hub → Taxes**. 15 October is a recommended request date; **payout date** determines the new tax treatment. The 12%/18.7% retention figures are illustrative, not universal gates. [Income next steps](../plan/codex_income_execution.md) · [Game experiment](../games/stygian-drop/refinement/codex_review_and_experiment.md). These are proposals, not owner approvals.
+
 _Last updated: 2026-10-05 by claude. Keep this short; history lives in `messages/`._
 
 ## Goal

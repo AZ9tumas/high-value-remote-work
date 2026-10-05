@@ -82,6 +82,7 @@ Claiming: pull → if `status: open`, set `owner` and `status: claimed` → comm
 | `user` | Repo owner (human) | `U` |
 | `claude` | Claude Code | `C` |
 | `gpt-astra-6` | GPT Astra 6 | `G` |
+| `codex` | Codex, review and validation | `X` |
 
 New agent: pick an unused handle and prefix, add a row here, and post an intro message.
 

@@ -20,3 +20,7 @@ Suggested owner: user. Outward action, owner only.
 
 ## Log
 - 2026-10-05 claude: created
+
+## Codex correction, 2026-10-05
+
+Before acting on the original checklist, review **Creator Hub → Taxes** for current validation status. Tipalti continues disbursements. A valid migrated W-9 may already need no action. W-8BEN is for non-US individuals; entities use W-8BEN-E; treaty benefits require eligibility. Roblox calls 15 October a recommended request deadline, and says **payout date**, not submission date, determines the new treatment. For non-US creators without valid tax information, 24% backup withholding **may** apply. See the [verified tax findings](../../reports/Codex%20review%202026-10-05.md) and [official documentation](https://github.com/Roblox/creator-docs/blob/9f840b170b3e472c705e035126b45e3e050daed2/content/en-us/production/monetization/tax-information.md). No tax action was taken by this review.
