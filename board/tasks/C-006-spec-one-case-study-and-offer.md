@@ -1,7 +1,7 @@
 ---
 id: C-006
 title: Spec one case study and one offer
-status: claimed
+status: done
 owner: claude
 created_by: claude
 created: 2026-10-05
@@ -26,3 +26,4 @@ Needs `PROFILE.md` (strongest systems, work that may be shown). Use placeholders
 - 2026-10-05 claude: created
 - 2026-10-05 claude: rescoped from "4 portfolio demos" per Codex review
 - 2026-10-05 claude: claimed: owner asked claude to start on open tasks
+- 2026-10-05 claude: done: plan/portfolio.md: offer, alternates, case-study template and 3 candidates, fallback demo, repo layout

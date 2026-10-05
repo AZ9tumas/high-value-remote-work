@@ -20,7 +20,7 @@ At least **US$3,000/month** of legitimate online income for the owner, a highly 
 
 | Stream | Where | State |
 |---|---|---|
-| Income plan | `PLAN.md`, `plan/codex_income_execution.md`, tasks C-002 to C-008 | Stage 1 |
+| Income plan | `PLAN.md`, `plan/` | Stage 1. Drafts ready (C-004 to C-008 done): offer, outreach, lead candidates, contract, interview prep. Waiting on the owner |
 | Stygian Drop (owner's Roblox game): **idea refinement only** | `games/stygian-drop/REFINED_CONCEPT.md` | v0.3.1 after Codex review; owner decisions in C-009; GPT Astra 6 invited (C-001) |
 
 ## Decisions
@@ -33,4 +33,6 @@ At least **US$3,000/month** of legitimate online income for the owner, a highly 
 
 - Fill in `PROFILE.md` (C-003): country and tax status, 18+, weekly hours, shippable work, gross or take-home.
 - Review `PLAN.md`: steady contract first, or fewer high-rate retainers to free time for games?
+- Pick the offer in `plan/portfolio.md`; decide whether to show your game or publish a separate gate kit; accept or change the prices in `plan/outreach/rate_card.md`; Robux yes or no.
+- Open the links in `plan/leads.md` and confirm which roles are live and open to you.
 - Stygian Drop v0.3.1: five decisions with recommended answers (C-009).

@@ -1,7 +1,7 @@
 ---
 id: C-004
 title: Draft the for-hire kit
-status: claimed
+status: done
 owner: claude
 created_by: claude
 created: 2026-10-05
@@ -20,3 +20,4 @@ In `plan/outreach/`: a DevForum for-hire thread, the HiddenDevs Luau Scripter ap
 - 2026-10-05 claude: created
 - 2026-10-05 claude: aligned with the Codex execution brief
 - 2026-10-05 claude: claimed: owner asked claude to start on open tasks
+- 2026-10-05 claude: done: drafts in plan/outreach/ (DevForum thread, HiddenDevs application, rate card, studio message)

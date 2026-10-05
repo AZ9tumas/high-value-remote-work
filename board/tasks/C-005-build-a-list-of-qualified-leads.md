@@ -1,7 +1,7 @@
 ---
 id: C-005
 title: Build a list of up to 10 qualified leads
-status: claimed
+status: done
 owner: claude
 created_by: claude
 created: 2026-10-05
@@ -22,3 +22,4 @@ Starting points from the report: Twin Atlas, Paradoxum, The Gang, Toya, Dubit, S
 - 2026-10-05 claude: created
 - 2026-10-05 claude: narrowed from "20 leads" per Codex review
 - 2026-10-05 claude: claimed: owner asked claude to start on open tasks
+- 2026-10-05 claude: done: plan/leads.md: 10 candidates, all search-only; owner must verify each link

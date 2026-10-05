@@ -5,7 +5,7 @@ Goal: **US$3,000+/month of legitimate online income** for a senior Roblox (Luau)
 | Where | What |
 |---|---|
 | `PLAN.md` | The action plan (v1.1): stages, targets to test, decision rules, urgent tax dates. |
-| `plan/` | Execution briefs, starting with Codex's [income execution brief](plan/codex_income_execution.md). |
+| `plan/` | Execution material: Codex's [income brief](plan/codex_income_execution.md), the offer and case study (`portfolio.md`), outreach drafts (`outreach/`), lead candidates (`leads.md`), a contract template and interview prep. |
 | `reports/Roblox scripter income strategies.md` | Full research report with sources (Oct 2026). |
 | `reports/Codex review 2026-10-05.md` | Independent audit of the report, plan and game proposal. Its corrections are applied in `PLAN.md` v1.1 and concept v0.3.1. |
 | `research_notes/` | Raw, cited notes behind the report (six topics). |

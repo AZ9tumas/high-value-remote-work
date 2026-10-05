@@ -33,17 +33,19 @@ Follows the [Codex execution brief](plan/codex_income_execution.md). Pause broad
 
 - [ ] Fill in `PROFILE.md`: country and tax residence, 18+, weekly hours, runway, shippable work, gross or take-home
 - [ ] Tax steps above; ID-verify the Roblox account; 2-step verification on
-- [ ] **One offer** in your strongest proven area. Example: diagnose and fix one reproducible saving, duplication or server-validation bug in a test copy, with a regression check and handover. Only offer what you can show
-- [ ] **One case study** from work you may publish: problem, your role, before/after, short demo, one test. Build new demos only if nothing shippable can be shown
-- [ ] Up to 10 **qualified** leads: current opening or clear need, real organization, eligible geography, source URL checked on a stated date. Old salary examples are not leads
-- [ ] HiddenDevs "Luau Scripter" application and a DevForum for-hire thread, sent only with the owner's OK
+- [ ] **One offer** in your strongest proven area. Only offer what you can show. Drafted in `plan/portfolio.md`: recommended "one moving system, replicated once"; alternates are a save/duplication/validation fix and a vehicle handling pass. Pick one
+- [ ] **One case study** from work you may publish: problem, your role (name any AI help), before/after, short demo, one test. Template and 3 candidates from your game: `plan/portfolio.md` §2. Build new demos only if nothing shippable can be shown
+- [ ] Up to 10 **qualified** leads: current opening or clear need, real organization, eligible geography, source URL checked on a stated date. 10 candidates in `plan/leads.md`, none verified live yet: open each link to confirm
+- [ ] HiddenDevs "Luau Scripter" application and a DevForum for-hire thread, sent only with the owner's OK. Drafts and rate card: `plan/outreach/`. HiddenDevs refuses AI-written code; DevForum posting needs an age-verified 18+ account (search summaries, 5 Oct 2026)
+- [ ] Set your contract defaults: `plan/contract_template.md` (not legal advice)
+- [ ] Before the first interview: `plan/interview_prep.md` (5 sessions)
 
 **Exit:** proof and offer reviewable; qualified leads listed. If there are no qualified leads, fix eligibility or the channel before making more portfolio assets.
 
 ## Stage 2 · Cash engine (weeks 3 to 9, to early Dec)
 
 - Fixed USD quotes, roughly $500 to $1,500 per scoped system (vendor price guides, unverified). Reply to leads within hours.
-- 8 to 12 applications to studios with **currently open** roles (starting list: Twin Atlas, Paradoxum, The Gang, Toya, Dubit, Sawhorse, Versework). Uplift and Gamefam only if eligible (US/UK).
+- 8 to 12 applications to studios with **currently open** roles, starting from `plan/leads.md` (best first: Twin Atlas, Voldex, Roblox's Technical Developer Specialist contract). Check each role's country rules against `PROFILE.md`.
 - Rehearse a 60 to 90 minute live technical interview.
 
 **Targets to test:** first paid job by week 3; $1,000 collected by week 4; $2,000 in month 2; two interview processes by week 6.
