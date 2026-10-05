@@ -33,19 +33,19 @@ Both parties are 18 or older. If the client is not, a parent or guardian also si
 
 **2. Independent contractor.** The contractor is independent, not the client's employee, partner or agent. It chooses how and when to work, uses its own equipment and may work for others. Subcontractors need the client's written consent.
 
-**3. Scope.** The deliverables and acceptance checks are in the spec (Schedule A). An acceptance check is a testable result, such as "data reloads after a server shutdown". Anything else is excluded, including by default art, animation, sound, third-party code, publishing, and changes to the live game or live data. The contractor will not break Roblox's Terms of Use. These terms override the spec unless it names the clause it changes.
+**3. Scope.** The deliverables and acceptance checks are in the spec (Schedule A). An acceptance check is a testable result, such as "data reloads after a server shutdown". Anything else is excluded, such as art, animation, sound, third-party code, publishing, and changes to the live game or live data, unless the spec lists it. The contractor will not break Roblox's Terms of Use. These terms override the spec unless it names the clause it changes.
 
 **4. Price and milestones.**
-- Fixed price: [PRICE] USD, including the revisions in clause 5 and the support in clause 10.
+- Fixed price: [PRICE] USD, including clause 5 revisions and clause 10 support.
 - Deposit: [DEPOSIT %] of the price, paid before work starts and counted toward it. Work starts once it clears and the Schedule A access is in place.
 - Each milestone is invoiced on acceptance. The next starts after payment.
 - Discovery, for unclear scope: up to [DISCOVERY HOURS] hours for [DISCOVERY FEE] USD, paid first. It delivers findings, a fix plan and a fixed quote, and the fee is due even if the cause is not found. The cap rises only with written approval. The client may then stop, or adopt the quote in an updated Schedule A [with the fee counted toward it].
 
 **5. Changes and revisions.** Change requests must be in writing. The contractor quotes the cost and new dates, and starts only after written agreement. Changes are billed at [HOURLY RATE] USD per hour or an agreed fixed price. Each milestone includes [REVISION ROUNDS] revision rounds within the spec; extra rounds are billed hourly. Fixing a failed acceptance check is free and not a revision. New features are change requests.
 
-**6. Timeline and client delays.** Target dates are in Schedule A. They move day for day with client delays in payment, access, feedback, assets or decisions. If the client is silent for [SILENCE DAYS] days, the contractor may pause and invoice current-milestone work at [HOURLY RATE], up to its price. Silence for [SILENCE DAYS] more days after a written reminder counts as cancelling (clause 17). The contractor warns early of any slip.
+**6. Timeline and client delays.** Schedule A dates move day for day with client delays in payment, access, feedback, assets or decisions. If the client is silent for [SILENCE DAYS] days, the contractor may pause and invoice current-milestone work at [HOURLY RATE], up to its price. Silence for [SILENCE DAYS] more days after a written reminder counts as cancelling (clause 17). The contractor warns early of any slip.
 
-**7. Delivery and acceptance.** Each milestone comes with a delivery note: what changed, how to test it, a demo, and each acceptance check's result. Within [ACCEPTANCE DAYS] days, the client accepts or lists failed checks with steps to reproduce. The contractor fixes them, with a new window for those items only. Silence after the window, or use in a game open to players, means accepted. Issues outside the acceptance checks are change requests, not grounds to reject.
+**7. Delivery and acceptance.** Each milestone comes with a delivery note, test steps, a demo and the result of each acceptance check. Within [ACCEPTANCE DAYS] days, the client accepts or lists failed checks with steps to reproduce. The contractor fixes them, with a new window for those items only. Silence after the window, or use in a game open to players, means accepted. Issues outside the acceptance checks are change requests, not grounds to reject.
 
 **8. Roblox delivery.**
 - The contractor works in [a test place or copy owned by the client / its own place or repository]. It changes the live game only if the spec says so, with written approval for each live publish.
@@ -57,7 +57,7 @@ Both parties are 18 or older. If the client is not, a parent or guardian also si
 
 **9. Access and security.**
 - Neither party asks for or shares passwords, cookies (including .ROBLOSECURITY), 2-step verification codes or recovery codes.
-- Access is by role, at the lowest level that works: Team Create on the test place, edit access to the test experience only, or repository access. No group funds, payouts, roles, secrets or live publishing unless the spec requires it. Any API key is created by the client, narrowly scoped and set to expire.
+- Access is by role, at the lowest level that works: Team Create on the test place, edit access to the test experience only, or repository access. There is no access to group funds, payouts, roles, secrets or live publishing unless the spec requires it. Any API key is created by the client, narrowly scoped and set to expire.
 - Neither party asks the other to paste code into browser developer tools, use a login link sent in a message, or run unknown programs or plugins.
 - Both keep 2-step verification on and report a suspected compromise at once.
 - The client removes access at the end. After the support window, the contractor deletes the client's confidential material, except required records and clause 12 materials.
@@ -67,7 +67,7 @@ Both parties are 18 or older. If the client is not, a parent or guardian also si
 **11. Intellectual property.**
 - Until full payment, the contractor owns the deliverables, and the client may use them only for testing. Using unpaid work in a game open to players makes the whole price due at once.
 - On full payment, the contractor assigns to the client all rights in the deliverables made for this project, except Contractor Tools.
-- Contractor Tools are the contractor's code, libraries, plugins and know-how made before or outside this project. The contractor keeps them. It grants the client a non-exclusive, perpetual, worldwide, royalty-free licence to use and modify them within the deliverables. The licence passes with the game if it is sold. Contractor Tools may not be resold on their own.
+- Contractor Tools are code, libraries, plugins and know-how the contractor made before or outside this project. It keeps them and grants the client a non-exclusive, perpetual, worldwide, royalty-free licence to use and modify them as part of the deliverables. The licence passes with the game if it is sold. Contractor Tools may not be resold on their own.
 - Third-party code listed in Schedule A keeps its own licence.
 
 **12. Portfolio and credit.** After public release [or [PORTFOLIO MONTHS] months after final payment, if sooner], the contractor may show the non-confidential work in its portfolio and applications: short videos, screenshots, its role and short code excerpts. The client grants a non-exclusive licence for this. Unreleased content, security details, player data and non-public figures stay private. An NDA or the spec can limit this right. [Option: the game's credits list the contractor as "[CREDIT LINE]".]
@@ -76,22 +76,22 @@ Both parties are 18 or older. If the client is not, a parent or guardian also si
 
 **14. Liability.** Each party's total liability is capped at the fees paid under this agreement [in the 12 months before the claim]. Neither is liable for indirect loss, such as lost revenue, Robux, players or data. The contractor does not guarantee revenue, CCU, retention, discovery or moderation outcomes. These limits do not cover the duty to pay, fraud, or anything the law does not allow to be limited.
 
-**15. Payment and late payment.** Invoices are in USD and due within [PAYMENT DAYS] days. They are paid by [METHODS], from the client's own account or the company in clause 1. [FEE PAYER] pays transfer, processing and conversion fees. Payment counts when cleared funds arrive. A reversed or charged-back payment counts as unpaid. The client raises problems under clause 20 before any payment dispute. If payment is late, the contractor may pause and withhold deliverables, and dates move. Late amounts carry [LATE FEE] where the law allows. After [LATE DAYS] days late, the contractor may end the agreement under clause 17.
+**15. Payment and late payment.** Invoices are in USD, due within [PAYMENT DAYS] days, and paid by [METHODS] from the client's own account or the company in clause 1. [FEE PAYER] pays transfer, processing and conversion fees. Payment counts when cleared funds arrive. A reversed or charged-back payment counts as unpaid. The client raises problems under clause 20 before any payment dispute. If payment is late, the contractor may pause and withhold deliverables, and dates move. Late amounts carry [LATE FEE] where the law allows. After [LATE DAYS] days late, the contractor may end the agreement under clause 17.
 
-**16. Robux (only if Schedule A accepts them).** The Robux price is the USD price divided by the standard DevEx rate on [QUOTE DATE] ([DEVEX RATE] USD per Robux), rounded up, plus [MARGIN %]. It is paid only by one-time group payout from a group the client controls. Robux count as paid only when available, not pending. The client confirms they are the group's bona fide earnings, paid out under Roblox's rules. If Roblox restricts or reverses a payout, or holds it over [HOLD DAYS] days, the client pays in USD within [PAYMENT DAYS] days. Refunds are in USD at the quoted rate.
+**16. Robux (only if Schedule A accepts them).** The Robux price is the USD price divided by the standard DevEx rate on [QUOTE DATE] ([DEVEX RATE] USD per Robux), rounded up, plus [MARGIN %, or 0%]. It is paid only by one-time group payout from a group the client controls. Robux count as paid only when available, not pending. The client confirms they are the group's bona fide earnings, paid out under Roblox's rules. If Roblox restricts or reverses a payout, or holds it over [HOLD DAYS] days, the client pays in USD within [PAYMENT DAYS] days. Refunds are in USD at the quoted rate.
 
 **17. Termination and kill fee.**
-- The client may cancel in writing at any time. It then pays for accepted milestones, for current-milestone work at [HOURLY RATE] up to its price, and a kill fee of [KILL FEE %] of unstarted milestones. The contractor keeps the deposit toward this. The same applies when the contractor ends the agreement under clause 6 or 15, or for the client's serious breach.
+- The client may cancel in writing at any time. It then pays for accepted milestones, for current-milestone work at [HOURLY RATE] up to its price, and a kill fee of [KILL FEE %] of unstarted milestones. The deposit is kept and counted toward this. The same applies when the contractor ends the agreement under clause 6 or 15, or for the client's serious breach.
 - Either party may end it for a serious breach not fixed within [CURE DAYS] days of written notice. The contractor may also withdraw on [NOTICE DAYS] days' notice. If the contractor withdraws, or the client ends it for the contractor's breach, the client pays only for accepted milestones and gets the rest back, including any unused deposit.
 - On ending, paid work is handed over and access is removed. Clauses 11 to 16, 18, 20 and 21 continue.
 
 **18. Taxes.** Each party handles its own taxes. Prices exclude VAT, GST and sales tax, which are added where they apply. If the client must withhold tax, it says so before paying and gives proof. [Option: it adds the withheld amount so the contractor receives the full invoice.]
 
-**19. Retainer (optional).** [RETAINER FEE] USD a month, paid in advance by day [DUE DAY], for up to [RETAINER HOURS] hours of Schedule A work. Unused hours [expire / roll over one month]. Approved extra hours cost [HOURLY RATE]. Responses come within [RESPONSE DAYS] business days. Minimum term: [MINIMUM MONTHS] months, then [NOTICE DAYS] days' written notice by either party. Tasks are accepted under clause 7. Code is handed over once its month is paid.
+**19. Retainer (optional).** [RETAINER FEE] USD a month, paid in advance by day [DUE DAY], buys up to [RETAINER HOURS] hours of Schedule A work. Unused hours [expire / roll over one month]. Approved extra hours cost [HOURLY RATE]. Responses come within [RESPONSE DAYS] business days. After [MINIMUM MONTHS] months, either party may end it on [NOTICE DAYS] days' written notice. Tasks are accepted under clause 7. Code is handed over once its month is paid.
 
 **20. Disputes and governing law.** The parties first try in good faith to settle a dispute for [TALK DAYS] days after written notice, then take it to [FORUM]. The law of [JURISDICTION] governs this agreement. Either party may seek urgent relief to protect confidential information or IP.
 
-**21. General.** This agreement, Schedule A and any NDA are the whole agreement. Changes need written agreement; email and [CHANNEL] messages count. Neither party may transfer it without written consent. An unenforceable clause leaves the rest intact. Neither party is liable for delays beyond its control, such as Roblox outages. E-signatures and copies count as originals.
+**21. General.** This agreement, Schedule A and any NDA are the whole agreement. Changes need written agreement; email and [CHANNEL] messages count. Neither party may transfer it without the other's written consent. An unenforceable clause leaves the rest intact. Neither party is liable for delays beyond its control, such as Roblox outages. E-signatures and copies count as originals.
 
 **Signatures**
 
@@ -129,7 +129,7 @@ Milestones other than discovery add up to the price, deposit included.
 
 ### Small job agreement
 
-For jobs up to [SMALL JOB LIMIT] USD. [CONTRACTOR] ("I") and [CLIENT] ("you"), Roblox IDs [ROBLOX ID] and [ROBLOX ID], agree on [DATE]:
+[CONTRACTOR] ("I") and [CLIENT] ("you"), Roblox IDs [ROBLOX ID] and [ROBLOX ID], agree on [DATE]:
 
 1. **Job.** [TASK] in [GAME OR PLACE]. Done when: [ACCEPTANCE CHECKS]. Anything else is quoted separately.
 2. **Price.** [PRICE] USD, fixed: [DEPOSIT %] before I start, the rest before handover, by [METHOD]. [FEE PAYER] pays the fees. Paid means cleared funds in my account; a reversed payment counts as unpaid.
@@ -147,7 +147,7 @@ For jobs up to [SMALL JOB LIMIT] USD. [CONTRACTOR] ("I") and [CLIENT] ("you"), R
 14. **Disputes.** We talk first for [TALK DAYS] days, then [FORUM]. Governing law: [JURISDICTION].
 15. **Age.** We are both 18 or older, or your parent or guardian also signs.
 
-Signed or e-signed: [CONTRACTOR], [DATE] · [CLIENT], [DATE] · Parent or guardian, if needed: [NAME], [DATE]
+Signed or e-signed: [CONTRACTOR] [DATE] · [CLIENT] [DATE] · [GUARDIAN, IF NEEDED] [DATE]
 
 ## 3. Before you start
 
@@ -188,10 +188,10 @@ The suggestions are my judgment, not market data. The research found no source o
 
 | Choice | Suggested start |
 |---|---|
-| Deposit | 50% for new clients; 100% upfront under [SMALL JOB LIMIT] |
-| Acceptance window | 5 business days |
-| Revision rounds | 2 per milestone |
-| Support window | 14 days |
+| Deposit | Discovery and jobs under [SMALL JOB LIMIT, e.g. $200]: 100% upfront. Otherwise as the rate card (`plan/outreach/rate_card.md`): under $1,000, 50% deposit and 50% on acceptance; $1,000 or more, 40% / 30% at a demo / 30% on acceptance |
+| Acceptance window | 5 business days (matches the rate card) |
+| Revision rounds | 1 for the small fixed offers in `plan/portfolio.md`; 2 per milestone for larger systems |
+| Support window | 7 days for the small fixed offers; 14 days for larger systems |
 | Kill fee | 25% of milestones not yet started |
 | Invoice terms and late fee | Due in 7 days; late fee only as local advice allows |
 | Discovery | A few hours, fixed fee, paid first |
@@ -206,7 +206,7 @@ The suggestions are my judgment, not market data. The research found no source o
 
 **Robux figures**, checked 5 Oct 2026 in Roblox's docs:
 - Standard DevEx rate: $0.0038 per Earned Robux. So $1 ≈ 263 Robux, and $500 = 131,579 Robux after rounding up ([DevEx doc][devex]).
-- Group payouts count as Earned Robux only if the group's funds are bona fide earnings. Cash-out needs 30,000 Earned Robux and is limited to one per calendar month ([DevEx doc][devex]). A small Robux job can take weeks or months to become cash.
+- Group payouts count as Earned Robux only if the group's funds are bona fide earnings. Cash-out needs 30,000 Earned Robux, with one completed cash-out per calendar month ([DevEx doc][devex]). A small Robux job can take weeks or months to become cash.
 - From 1 Nov 2026, DevEx payments are treated as royalties, and US withholding may apply depending on your tax status ([tax doc][tax]; `PLAN.md`). Robux priced at the DevEx rate can then pay less than the same USD price, which is why clause 16 has a margin.
 
 **Payment providers.** This file makes no claim about any provider's buyer or seller protection ([Codex review][review], finding 7). Check the current terms for your country before you name a method.
