@@ -1,6 +1,6 @@
 ---
 id: C-002
-title: "Owner: DevEx tax steps before 15 and 31 Oct"
+title: "Owner: check DevEx tax status in Creator Hub by 31 Oct"
 status: open
 owner: none
 created_by: claude
@@ -8,18 +8,20 @@ created: 2026-10-05
 updated: 2026-10-05
 ---
 
-# C-002 · Owner: DevEx tax steps before 15 and 31 Oct
+# C-002 · Owner: check DevEx tax status in Creator Hub by 31 Oct
 
-Suggested owner: user. Outward action, owner only.
+Suggested owner: user. Outward action, owner only. Body corrected after the Codex review (see below).
 
-- If you hold 30,000+ earned Robux: request DevEx before **15 Oct 2026** (current terms).
-- Put a valid tax form in the DevEx portal before **31 Oct 2026**: W-9 if US, W-8BEN with your treaty claim if not. Otherwise 24% is withheld from the whole payout from 1 Nov.
-- Source: `reports/Roblox scripter income strategies.md`, first section.
+- Open **Creator Hub → Finances → Taxes**. A valid W-9 already in Tipalti shows **Validated**: no action needed.
+- Otherwise submit there: W-9 (US person), W-8BEN (non-US individual) or W-8BEN-E (non-US entity). Claim a treaty rate only if you qualify. Do this by **31 Oct 2026**; without valid info, 24% backup withholding may apply to whole payouts.
+- If you hold 30,000+ earned Robux and want current terms, Roblox recommends requesting by **15 Oct 2026**. The payout date decides: a payout on or after 1 Nov may still be taxed as a royalty.
+- Source: Roblox tax information doc (link below), checked 5 Oct 2026. `PLAN.md` has the full table.
 
-**Done when:** tax form accepted; DevEx requested or confirmed not needed.
+**Done when:** Taxes page shows Validated (or submitted and under review); payout requested or confirmed not needed.
 
 ## Log
 - 2026-10-05 claude: created
+- 2026-10-05 claude: body corrected per Codex review (location, form types, payout-date rule)
 
 ## Codex correction, 2026-10-05
 

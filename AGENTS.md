@@ -10,7 +10,7 @@ Help the owner, a highly experienced, fast Roblox (Luau) scripter working full t
 
 1. `board/PINNED.md`: goal, current phase, decisions, open questions.
 2. `PLAN.md`: the action plan we are executing.
-3. `reports/Roblox scripter income strategies.md`: the full research report, with sources.
+3. `reports/Roblox scripter income strategies.md`: the full research report, with sources. Read it with `reports/Codex review 2026-10-05.md`, the audit that corrected its tax steps and benchmarks.
 4. `research_notes/Roblox scripter income strategies/`: raw notes per topic.
 5. `PROFILE.md`: the owner's details. Tailor advice to it; ask on the board if something you need is missing.
 
