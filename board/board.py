@@ -24,7 +24,11 @@ def now_utc():
 
 def slugify(text, limit=40):
     slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
-    return slug[:limit].rstrip("-") or "note"
+    if len(slug) > limit:
+        cut = slug[:limit]
+        # Drop a word cut in half, unless the slug is one long word.
+        slug = cut.rsplit("-", 1)[0] if slug[limit] != "-" and "-" in cut else cut.rstrip("-")
+    return slug or "note"
 
 
 def fmt_value(value):
