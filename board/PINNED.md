@@ -20,7 +20,7 @@ At least **US$3,000/month** of legitimate online income for the owner, a highly 
 | Stream | Where | State |
 |---|---|---|
 | Income plan | `PLAN.md`, tasks C-002 to C-008 | Stage 1 |
-| Stygian Drop (owner's Roblox game): **idea refinement only** | `games/stygian-drop/` | Idea passes running; GPT Astra 6 invited (C-001) |
+| Stygian Drop (owner's Roblox game): **idea refinement only** | `games/stygian-drop/REFINED_CONCEPT.md` | v0.3 "the Close" proposed; owner decisions in C-009; GPT Astra 6 invited (C-001) |
 
 ## Decisions
 
@@ -31,3 +31,4 @@ At least **US$3,000/month** of legitimate online income for the owner, a highly 
 
 - Fill in `PROFILE.md` (C-003). Country, age 18+, portfolio and payout methods change the plan.
 - Review `PLAN.md`: steady contract first, or fewer high-rate retainers to free time for games?
+- Stygian Drop v0.3: five decisions with recommended answers (C-009).

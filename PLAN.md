@@ -51,7 +51,7 @@ Plan v1, 5 Oct 2026. Based on `reports/Roblox scripter income strategies.md` (re
 ## Stage 4 · Upside (months 4 to 12, 10 to 15 h/week)
 
 - Prototypes in 2 to 4 weeks each: a proven loop with a twist, 16+ audience, R15-only, server-authoritative, policy-checked monetization. About $100 of ads per test (roughly 5,000 to 14,000 plays).
-- **Stygian Drop** (`games/stygian-drop/`) is the first candidate. Suggestion: finish its M1 feel check (about 40 h) at up to 10 h/week during stages 1 and 2, since it is cheap and tells you whether the idea has legs. Hold M2+ until the floor is in place, unless M1 passes strongly.
+- **Stygian Drop** (`games/stygian-drop/`) is the first candidate. Suggestion: run its M1 test, "The Close" (about 45 h, see `games/stygian-drop/REFINED_CONCEPT.md` section 5), at up to 10 h/week during stages 1 and 2, since it is cheap and tells you whether the idea has legs. Hold M2+ until the floor is in place, unless M1 passes strongly.
 - One Creator Store plugin, or a kit sold off-platform where Stripe is not available.
 
 **Targets:** 3 to 4 prototypes tested by month 9; one with day-one retention of 12%+ and low first-play bounce; one game holding 100+ average daily users for 60 days.

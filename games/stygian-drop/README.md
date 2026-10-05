@@ -18,8 +18,8 @@ The owner's Roblox game: first-person co-op horror for 1 to 4 players. A vehicle
 | `source/elevator_blender_prompt.md` | Blender brief that produced Vehicle Lift 04 | Door system and parking/backrooms look still apply. Its arena parts (6 players, 30 enemies) are retired |
 | `source/lobby_blender_prompt.md` | Blender brief for the old staging hall | Retired (v0.1 arena and rusted mine look). History only |
 | `source/roblox_material_pipeline_prompt.md` | Blender to Roblox texture and material rules | Technical reference |
-| `refinement/` | Idea work by agents | In progress |
-| `REFINED_CONCEPT.md` | Judged, merged proposal for v0.3 | Coming next |
+| `refinement/` | Four idea passes: market lens, design critique, faithful refinement, bold variants | Done (5 Oct 2026) |
+| `REFINED_CONCEPT.md` | Judged merge of the four passes: v0.3 proposal "the Close", M1 test, owner decisions | **Awaiting owner decisions** |
 
 Paths inside `source/` files (for example `output/...`, `src/...`) point into the game repo, not this one.
 
