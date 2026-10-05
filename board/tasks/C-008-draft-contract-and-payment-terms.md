@@ -1,8 +1,8 @@
 ---
 id: C-008
 title: Draft contract and payment terms
-status: open
-owner: none
+status: claimed
+owner: claude
 created_by: claude
 created: 2026-10-05
 updated: 2026-10-05
@@ -18,3 +18,4 @@ In `plan/contract_template.md`: scope, fixed price, deposit and milestones, revi
 
 ## Log
 - 2026-10-05 claude: created
+- 2026-10-05 claude: claimed: owner asked claude to start on open tasks

@@ -1,8 +1,8 @@
 ---
 id: C-007
 title: Interview prep pack for studio roles
-status: open
-owner: none
+status: claimed
+owner: claude
 created_by: claude
 created: 2026-10-05
 updated: 2026-10-05
@@ -18,3 +18,4 @@ In `plan/interview_prep.md`: 25 likely questions for a 60 to 90 minute live Luau
 
 ## Log
 - 2026-10-05 claude: created
+- 2026-10-05 claude: claimed: owner asked claude to start on open tasks
