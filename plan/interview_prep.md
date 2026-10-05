@@ -11,22 +11,22 @@ Task C-007 · claude · 5 Oct 2026. For the 60 to 90 minute live technical inter
 **1. RemoteEvent, UnreliableRemoteEvent or RemoteFunction?**
 - RemoteEvent: one-way, reliable, ordered per client and direction, even across instances. About 500 client sends per second per remote type [C1].
 - UnreliableRemoteEvent: no delivery or order guarantee; drops payloads over 1,000 bytes. Use for high-rate cosmetic state, with a sequence number [C1].
-- RemoteFunction: client to server only.
+- RemoteFunction: use it client to server only.
 - Pitfall: the server waiting on InvokeClient. The client can error, leave or never answer [C1].
 
 **2. What survives a trip over a remote?**
-- Non-string keys become strings. Metatables are dropped, functions arrive as nil, tables arrive as copies. Avoid mixed tables [C1].
+- Instance, userdata and function keys become strings. Metatables are dropped, functions arrive as nil, tables arrive as copies. Avoid mixed tables [C1].
 - Instances the receiver cannot see arrive as nil [C1]. Send plain ids; rebuild objects on the other side.
 - Pitfall: expecting an object's methods to survive the trip.
 
 **3. Network ownership: how does it work, what does it cost?**
-- The server always owns anchored parts. Unanchored parts near a character go to that client. Override with SetNetworkOwner on the server [C2].
+- Anchored parts are always server-owned. Unanchored parts near a character can go to that client automatically; override with SetNetworkOwner on the server [C2].
 - An owner has full physics authority: teleport, fly, fling, NaN CFrames, skipped Touched events [C2].
 - Vehicles: driver ownership for feel, server checks on outcomes. The server authority model (beta per the security docs) offers prediction and rollback instead [C2][C3].
 - Pitfall: SetNetworkOwner(nil) everywhere. The docs warn of jittery physics [C2].
 
 **4. Show timed server state (doors, rounds) on clients.**
-- Replicate start time and duration once, as attributes. Clients compute progress from workspace:GetServerTimeNow(), which is smoothed and monotonic [C4].
+- Replicate start time and duration once, as attributes. Clients compute progress with workspace:GetServerTimeNow() (smoothed, monotonic) [C4].
 - Property changes and remote events can arrive in either order [C4].
 - Motor6D.Transform is not replicated: ideal for client-only posing [C5].
 - Pitfall: tick() or os.time() on clients (local clocks), or GetServerTimeNow for reward timers (not secure) [C3][C4].
@@ -87,7 +87,7 @@ Task C-007 · claude · 5 Oct 2026. For the 60 to 90 minute live technical inter
 **13. Type an OOP class. Which features do you use?**
 - `export type Account = typeof(setmetatable({} :: AccountData, Account))`, then annotate `self` [L1].
 - Fields on the object, methods on the metatable. table.create for known sizes. Avoid getfenv, setfenv and loadstring: they deoptimize [L2].
-- Know compound assignment, continue, if-expressions, string interpolation, generalized iteration and `//` [L2].
+- Know continue, compound assignment, if-expressions, string interpolation and generalized iteration [L2].
 - Pitfall: leaving `self` inferred, so methods disagree on its type [L1].
 
 **14. task library, deferred events, Promises.**
@@ -131,7 +131,7 @@ Task C-007 · claude · 5 Oct 2026. For the 60 to 90 minute live technical inter
 **20. Implement ProcessReceipt idempotently.**
 - Set it once, in one server Script, for every developer product, including Store-tab purchases [C16].
 - It runs on purchase and when a buyer with unresolved receipts joins. No timed retries. It can run on two servers at once, and PurchaseGranted can fail to record [C16].
-- Flow: wait for session-locked data (stop if the player leaves). PurchaseId already saved? Return PurchaseGranted. Else grant, record the PurchaseId, save, then PurchaseGranted; if the save fails, NotProcessedYet [C6].
+- Flow: wait for session-locked data (stop if the player leaves). PurchaseId recorded and saved: PurchaseGranted. Recorded but unsaved: NotProcessedYet, no second grant. Otherwise grant, record the PurchaseId, save; PurchaseGranted only if the save succeeds [C6].
 - Pitfall: granting on PromptProductPurchaseFinished, which can be spoofed [C16][C22].
 
 **21. Passes, products and policy.**
@@ -171,10 +171,10 @@ Cover requirements, authority, data, failure modes, scale and tests. 15 to 20 mi
 
 **A. Item trading that cannot duplicate.**
 - Same-server trades first, with both profiles session-locked on this server [C6][T2].
-- Server state machine: open, both ready, countdown, commit. Any change resets ready. Rate-limit, and validate offers against server inventory [C22].
+- Server state machine: open, both ready, countdown, commit. Any change resets ready. Rate-limit, and validate offers against server inventory [C22][C23].
 - Items carry unique ids (HttpService:GenerateGUID) [C25]. Commit without yielding between remove and add; write the trade id into both profiles; save both. Writes are not atomic across keys, so the trade id exposes replays [C6].
 - Cross-server gifts: ProfileStore MessageAsync (UpdateAsync-backed), not best-effort MessagingService [T2][C19].
-- Follow-ups: one save fails; now what? How do you find dupes already in the economy? How would a cross-server auction work (MemoryStore sorted map) [C20]?
+- Follow-ups: one save fails; now what? Finding dupes already in the economy? A cross-server auction (MemoryStore sorted map) [C20]?
 
 **B. Cross-server timed event.**
 - Put the start time in config so servers agree without messages. Clients count down with GetServerTimeNow [C18][C4].
@@ -182,7 +182,7 @@ Cover requirements, authority, data, failure modes, scale and tests. 15 to 20 mi
 - Global counter: MemoryStore hash map, sharded keys, UpdateAsync. About 5,000 write units per key per minute [C20].
 - Memory stores are not durable: short expirations, quota 64 KB + 1.2 KB per user. Final results go to DataStores [C20].
 - Rewards keyed by event id in the profile: no double claims after server hops.
-- Follow-ups: a server misses the start message? How do you avoid a hot key? A player hops servers mid-event?
+- Follow-ups: a server misses the start message? Avoiding a hot key? A player hops servers mid-event?
 
 **C. Round-based game server.**
 - One server module owns the phases: waiting, intermission, loading, playing, results, cleanup. Phase and end time replicate as attributes [C4].
@@ -194,7 +194,7 @@ Cover requirements, authority, data, failure modes, scale and tests. 15 to 20 mi
 
 **D. Live-ops config system.**
 - Experience Configs hold flags, tunables and timed content. Every key has a code default [C18].
-- Validate types and ranges before use. Send clients only what they need.
+- Validate types and ranges before use.
 - Apply updates at safe points (UpdateAvailable, then Refresh). Roll out over 15 minutes; roll back from History [C18].
 - Targeting and experiments for A/B. Log the config value with analytics events [C18].
 - Without Configs: one DataStore key plus a MessagingService nudge, and polling with jitter [C6][C19].
@@ -214,14 +214,14 @@ From your game's README [O1]. Nothing here proves the code exists: confirm every
 1. **Load-gated join (data reliability).** S: gameplay could start before data or assets loaded. T: deterministic joins. A: CharacterAutoLoads off. The client preloads behind a ReplicatedFirst screen while the server opens a session-locked ProfileStore profile; the player is loaded only when both finish. Services gate on ObservePlayerLoaded, which replays already-loaded players. Clients that never report ready are kicked after 180 s. Studio uses the Mock store. R: owner to add.
 2. **Gate replication (networking, performance).** S: a scissor gate of 288 pieces. A: the server replicates each sweep once, as four attributes. Clients derive progress from the server clock and pose the pieces through Motor6D.Transform. The server moves only a collision slab. Late joiners rebuild from the attributes. R: one attribute batch plus a bounded collider update, not 289 weld poses per Heartbeat (your 18 Sep 2026 analysis).
 3. **Elevator API (API design, safety).** A: objects are built from CollectionService tags. Every action returns a Promise and never yields the caller. Interlocks: Ascend rejects while the gate is open. No per-frame work while idle. Clients get read-only queries. R: owner to add.
-4. **Vehicle drivetrain (physics, ownership).** A: a per-wheel model (contact, load transfer, friction circle, Ackermann steering) drives a planar LinearVelocity and a yaw-only AlignOrientation on the driver's client. VehicleService owns seats and network ownership. Be ready for: what does the server check, given the driver owns the car [C2]?
+4. **Vehicle drivetrain (physics, ownership).** A: a per-wheel model (contact, load transfer, friction circle, Ackermann steering) drives a planar LinearVelocity and a yaw-only AlignOrientation on the driver's client. VehicleService owns seats and network ownership. Expect: what does the server check if the driver owns the car [C2]?
 5. **Toolchain (team readiness).** A: Rojo 7.7.0, Wally, Rokit-pinned tools, one check script (format, selene, strict luau-lsp) and Studio-only scenario tests that confirm Studio runs the code on disk. R: owner to add.
 6. **Client work (placeholder).** Project (with permission), your role, the problem, results with numbers (CCU, visits, bugs fixed), link.
 
 ## 4. Five-session prep plan (60 minutes each)
 
-1. **Networking and security.** Read [C1][C2][C22]. Answer questions 1 to 4 and 23 to 25 aloud, 2 minutes each, recorded. Note the gaps.
-2. **Data and money.** From memory, in strict Luau, write a session-locked save flow and a ProcessReceipt handler (30 min). Compare them with Roblox's sample [C6]. Answer 5 to 8 and 20 to 22 aloud.
+1. **Networking and security.** Read [C1][C2][C22]. Answer questions 1 to 4 and 23 to 25 aloud, 2 minutes each; record and note gaps.
+2. **Data and money.** In strict Luau, from memory: a session-locked save flow and a ProcessReceipt handler (30 min). Compare with Roblox's sample [C6]. Answer 5 to 8 and 20 to 22 aloud.
 3. **Luau, performance, tooling.** Write a typed token bucket with tests (25 min). Profile one hot path in your game with the MicroProfiler (15 min). Answer 9 to 19 quickly.
 4. **System design.** Prompts A and E aloud, 20 minutes each, then their follow-ups. Sketch on paper.
 5. **Mock interview.** A friend or an AI agent plays interviewer. 15 min: explain the gate replication or join flow aloud, with a diagram. 20 min: random questions from part 1. 20 min: one unseen prompt (B, C or D). 5 min: feedback. Record it; redo the two weakest answers.
@@ -270,8 +270,8 @@ All checked 5 Oct 2026.
 - [T4] roblox-ts/roblox-ts `README.md`, `package.json` @ `68648b0c633ef1016009aec7521b528f648ba656`
 - [T5] jsdotlua/jest-lua `README.md` @ `a5d089ab06021a931f9bb3df9cbc7b5154da8a7b`; Roblox/testez `README.md` @ `26a5247631279154c74425b94583c189b8447d0f`
 - [T6] JohnnyMorganz/luau-lsp `README.md` @ `9024d56b36e03df195a18df6207358ab9c3bd269`; rojo-rbx/rojo `src/cli/sourcemap.rs` @ `95262a02e96aabd02ff455142cb1414d55be0dd8`
-- [T7] evaera/roblox-lua-promise `README.md` @ `031d429c82ee458a849e79fa523523bd349d7695`
+- [T7] evaera/roblox-lua-promise `README.md`, `lib/init.lua` @ `031d429c82ee458a849e79fa523523bd349d7695`
 
 **This repo:**
-- [R1] `research_notes/Roblox scripter income strategies/studio_jobs_contracts.md`, section 3 (from search excerpts, not re-checked here)
+- [R1] `research_notes/Roblox scripter income strategies/studio_jobs_contracts.md`, section 3 (search excerpts; not re-checked)
 - [O1] `games/stygian-drop/source/README.md` (your game's README; code in a separate repo; owner to confirm)
